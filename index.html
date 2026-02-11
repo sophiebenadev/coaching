@@ -74,25 +74,20 @@ leurs objectifs grâce à un accompagnement bienveillant et motivant.
 
 
 
-<form name="contact" netlify>
+<form name="contact" method="POST" data-netlify="true">
   <p>
-    <label><input type="text" name="name" placeholder="Name" /></label>
+    <label>Name <input type="text" name="name" required /></label>
   </p>
   <p>
-    <label><input type="email" name="email" placeholder="Email " /></label>
+    <label>Email <input type="email" name="email" required /></label>
   </p>
   <p>
-   <label>
-<textarea name="message" placeholder="Ton message" ></textarea>
-   </label> 
+    <label>Message <textarea name="message" placeholder="Ton message" required></textarea></label>
   </p>
-  
-
   <p>
     <button type="submit" class="btn">Send</button>
   </p>
 </form>
-
 </div>
 </section>
 
