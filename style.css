@@ -35,6 +35,9 @@ text-align: center;
 .header {
 background: var(--light-color);
 padding: 1rem 0;
+
+
+
 }
 
 .pdp {
@@ -51,9 +54,13 @@ color: var(--main-color);
 }
 
 .header .container {
+
+
 display: flex;
 justify-content: space-between;
 align-items: center;
+
+
 }
 
 .nav {
