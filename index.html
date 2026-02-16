@@ -74,22 +74,32 @@ leurs objectifs grâce à un accompagnement bienveillant et motivant.
 
 
 
-<form name="contact" method="POST" data-netlify="true">
+<form name="contact" method="POST" data-netlify="true" id="contact-form">
+  <input type="hidden" name="form-name" value="contact" />
+
   <p>
     <label>Name <input type="text" name="name" required /></label>
   </p>
+
   <p>
     <label>Email <input type="email" name="email" required /></label>
   </p>
+
   <p>
-    <label>Message <textarea name="message" placeholder="Ton message" required></textarea></label>
+    <label>Message 
+      <textarea name="message" placeholder="Ton message" required></textarea>
+    </label>
   </p>
+
   <p>
     <button type="submit" class="btn">Send</button>
   </p>
 </form>
+
 </div>
 </section>
+
+
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -99,6 +109,32 @@ leurs objectifs grâce à un accompagnement bienveillant et motivant.
 
 <p>© 2026 Coach sportive - Tous droits réservés</p>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  emailjs.init("-QMOWJCUTBySev5Yu");
+</script>
+<script>
+  const form = document.getElementById('contact-form');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm(
+      'service_d55tc7u',
+      'template_90a792h',
+      this
+    )
+    .then(function() {
+      alert('Message envoyé ✅');
+      form.reset();
+    }, function(error) {
+      alert('Erreur ❌ ' + JSON.stringify(error));
+    });
+  });
+</script>
+
+
 
 </body>
 </html>
